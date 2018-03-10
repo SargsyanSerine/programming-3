@@ -31,7 +31,6 @@ var GrassCount = 100;
 var EatgrassCount = 20;
 var GishatichCount = 25;
 var TakardCount = 15;
-var QarCount = 10;
 
 
 
@@ -85,15 +84,6 @@ var c = 0;
         c++;
     }
 }
-var c = 0;
-     while (c < QarCount){
-        var x = Math.floor(random(0, layn));
-        var y = Math.floor(random(0, bardz));
-        if(matrix[x][y] == 0){
-        matrix[x][y] = 5 ;
-        c++;
-    }
-}
 
 
     noStroke()
@@ -123,11 +113,7 @@ var c = 0;
                 takardArr.push(takard);
 
             }
-             else if (matrix[i][j] == 5) {
-                var qar = new Qar(j, i, 5);
-                qarArr.push(qar);
-
-            }
+            
            
           
     }
@@ -157,10 +143,7 @@ function draw() {
                 fill('red');
                 rect(j * side, i * side, side, side);
             }
-            else if (matrix[i][j] == 5) {
-                fill('');
-                rect(j * side, i * side, side, side);
-            }
+          
            
         }
     }
