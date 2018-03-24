@@ -1,7 +1,7 @@
 
 class Mariakan {
     constructor(x, y, ind) {
-        super(x, y, ind);
+        this.index = ind;
         this.x = x;
         this.y = y;
         this.energy = 5;
