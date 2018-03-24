@@ -1,11 +1,11 @@
-class Eatgrass extends Mariakan{
+class Eatgrass extends Mariakan {
     constructor(x, y, ind) {
         super(x, y, ind);
         this.energy = 15;
 
     }
 
- 
+
 
 
 
@@ -52,6 +52,7 @@ class Eatgrass extends Mariakan{
                 if (x == xotArr[i].x && y == xotArr[i].y) {
                     xotArr.splice(i, 1);
                 }
+                break;
             }
             if (this.multiply == 2) {
                 this.mul()
@@ -69,9 +70,9 @@ class Eatgrass extends Mariakan{
     }
 
     mul() {
-        
-            var emptyCord = this.getDirections(0);
-        
+
+        var emptyCord = this.getDirections(0);
+
 
         var cord = random(emptyCord);
         if (cord) {
@@ -92,8 +93,10 @@ class Eatgrass extends Mariakan{
         for (var i in eatArr) {
             if (this.x == eatArr[i].x && this.y == eatArr[i].y) {
                 eatArr.splice(i, 1);
+                break;
             }
         }
+
     }
 
 }

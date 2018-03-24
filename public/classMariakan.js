@@ -35,7 +35,9 @@ class Mariakan {
                     found.push(this.directions[i]);
                 }
             }
+           
         }
+     
         return found;
     }
 

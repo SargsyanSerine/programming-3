@@ -48,6 +48,7 @@ class Gishatich extends Mariakan{
                 if (x == eatArr[i].x && y == eatArr[i].y) {
                     eatArr.splice(i, 1);
                 }
+                break;
             }
             if (this.multiply == 2) {
                 this.mul()
@@ -92,6 +93,7 @@ class Gishatich extends Mariakan{
                 gishatichArr.splice(i, 1);
             }
         }
+       
     }
 
 }
