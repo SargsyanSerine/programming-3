@@ -1,22 +1,11 @@
 class Eatgrass extends Mariakan{
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.x = x;
-        this.y = y;
-        this.multiply = 0;
         this.energy = 15;
 
     }
 
-    newDirections() {
-        return super.newDirections();
-    }
-
-
-    getDirections(t) {
-        return super.getDirections(t);
-    }
-
+ 
 
 
 

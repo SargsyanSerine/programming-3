@@ -1,22 +1,10 @@
 class Takard extends Mariakan{
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.x = x;
-        this.y = y;
         this.energy = 10;
+       }
+
        
-
-    }
-
-    newDirections() {
-      return super.newDirections();
-    }
-
-     getDirections(t) {
-       return super.getDirections(t);
-    }
-
-    
 
     eat() {
     	

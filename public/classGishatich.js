@@ -1,21 +1,11 @@
 class Gishatich extends Mariakan{
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.x = x;
-        this.y = y;
         this.energy = 20;
-        this.multiply = 0;
 
     }
 
-    newDirections() {
-      return super.newDirections();
-    }
 
-     getDirections(t) {
-         return super.getDirections(t);
-         
-    }
 
      move() {
         var emptyCord = this.getDirections(0);

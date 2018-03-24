@@ -2,22 +2,12 @@
 class Grass extends Mariakan{
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.x = x;
-        this.y = y;
         this.energy = 5;
-        this.multiply = 0;
+
 
     }
 
-    newDirections() {
-        return super.newDirections();
-    }
-
-
-    getDirections(t) {
-        return super.getDirections(t);
-    }
-
+   
     mul() {
         this.multiply++;
         if (this.multiply >= 0) {
