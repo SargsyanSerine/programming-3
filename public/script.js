@@ -1,5 +1,5 @@
 var matrix = []
-var side = 5;
+var side = 10;
 var xotArr = [];
 var eatArr = [];
 var gishatichArr = [];
@@ -25,17 +25,18 @@ var matrix = [
 */
 
 
-var bardz = 100;
-var layn = 100;
-var GrassCount = 100;
-var EatgrassCount = 20;
-var GishatichCount = 25;
-var TakardCount = 15;
+var bardz = 50;
+var layn = 50;
+var GrassCount = 50;
+var EatgrassCount = 10;
+var GishatichCount = 15;
+var TakardCount = 5;
 
 
 
 
 function setup() {
+  
 
     for (var i = 0; i < bardz; i++){
         matrix.push([]);
@@ -87,9 +88,11 @@ var c = 0;
 
 
     noStroke()
-    frameRate(60);
+    frameRate(80);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
+    
+    
 
 
     
@@ -121,9 +124,39 @@ var c = 0;
 }
 }
 
+
 function draw() {
-    background('#acacac');
-    for (var i = 0; i < matrix.length; i++) {
+    
+  
+
+     background('#acacac');
+  
+    
+
+
+
+
+    for (var i in xotArr) {
+        xotArr[i].mul();
+    }
+
+    for (var i in eatArr) {
+        eatArr[i].eat();
+    }
+    for (var i in gishatichArr) {
+        gishatichArr[i].eat();
+    }
+      for (var i in takardArr) {
+        takardArr[i].eat();
+    }
+  
+  text(frameCount, width / 2, height / 2);
+
+  console.log(frameCount);
+
+  if (frameCount %40>=0 && frameCount  %40<=10)
+  {
+        for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {
             if (matrix[i][j] == 1) {
                 fill("green");
@@ -147,21 +180,102 @@ function draw() {
            
         }
     }
+    
+ }
+
+  else if (frameCount %40>=10 && frameCount %40<=20)
+  {
+        for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] == 1) {
+                fill("#b98046");
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 2) {
+                fill("orange");
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 0) {
+                fill('#acacac');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 3) {
+                fill('blue');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 4) {
+                fill('red');
+                rect(j * side, i * side, side, side);
+            }
+          
+           
+        }
+    }
+    
+ }
+
+ else if (frameCount %40>=20 && frameCount %40<=30)
+  {
+        for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] == 1) {
+                fill("#ffffff");
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 2) {
+                fill("orange");
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 0) {
+                fill('#acacac');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 3) {
+                fill('blue');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 4) {
+                fill('red');
+                rect(j * side, i * side, side, side);
+            }
+          
+           
+        }
+    }
+    
+ }
+
+ else if (frameCount %40>=30 && frameCount %40<=39)
+  {
+        for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] == 1) {
+                fill("#ffe6ff");
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 2) {
+                fill("orange");
+                rect(j * side, i * side, side, side);
+                
+            } else if (matrix[i][j] == 0) {
+                fill('#acacac');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 3) {
+                fill('blue');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 4) {
+                fill('red');
+                rect(j * side, i * side, side, side);
+            }
+          
+           
+        }
+    }
+    
+ }
+ 
+
+ 
 
 
 
-
-    for (var i in xotArr) {
-        xotArr[i].mul();
-    }
-
-    for (var i in eatArr) {
-        eatArr[i].eat();
-    }
-    for (var i in gishatichArr) {
-        gishatichArr[i].eat();
-    }
-      for (var i in takardArr) {
-        takardArr[i].eat();
-    }
-    }
+}
+    
+    
