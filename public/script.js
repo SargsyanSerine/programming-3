@@ -27,10 +27,10 @@ var matrix = [
 
 var bardz = 50;
 var layn = 50;
-var GrassCount = 50;
+var GrassCount = 10;
 var EatgrassCount = 10;
-var GishatichCount = 15;
-var TakardCount = 5;
+var GishatichCount = 10;
+var TakardCount = 0;
 
 
 
@@ -136,19 +136,6 @@ function draw() {
 
 
 
-    for (var i in xotArr) {
-        xotArr[i].mul();
-    }
-
-    for (var i in eatArr) {
-        eatArr[i].eat();
-    }
-    for (var i in gishatichArr) {
-        gishatichArr[i].eat();
-    }
-      for (var i in takardArr) {
-        takardArr[i].eat();
-    }
   
   text(frameCount, width / 2, height / 2);
 
@@ -274,6 +261,19 @@ function draw() {
 
  
 
+    for (var i in xotArr) {
+        xotArr[i].mul();
+    }
+
+    for (var i in eatArr) {
+        eatArr[i].eat();
+    }
+    for (var i in gishatichArr) {
+        gishatichArr[i].eat();
+    }
+      for (var i in takardArr) {
+        takardArr[i].eat();
+    }
 
 
 }

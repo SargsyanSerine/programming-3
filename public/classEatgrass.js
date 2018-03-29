@@ -34,32 +34,111 @@ class Eatgrass extends Mariakan {
         var emptyCord = this.getDirections(1);
 
         var cord = random(emptyCord);
+        if (frameCount % 40 >= 0 && frameCount % 40 <= 10) {
+            if (cord) {
+                this.multiply++;
 
-        if (cord) {
-            this.multiply++;
+                var x = cord[0];
+                var y = cord[1];
 
-            var x = cord[0];
-            var y = cord[1];
+                matrix[y][x] = 2;
+                matrix[this.y][this.x] = 0;
 
-            matrix[y][x] = 2;
-            matrix[this.y][this.x] = 0;
-
-            this.x = x;
-            this.y = y;
+                this.x = x;
+                this.y = y;
 
 
-            for (var i in xotArr) {
-                if (x == xotArr[i].x && y == xotArr[i].y) {
-                    xotArr.splice(i, 1);
+                for (var i in xotArr) {
+                    if (x == xotArr[i].x && y == xotArr[i].y) {
+                        xotArr.splice(i, 1);
+                    }
+                    break;
                 }
-                break;
+                if (this.multiply == 1) {
+                    this.mul()
+                    this.multiply = 0;
+                }
             }
-            if (this.multiply == 2) {
-                this.mul()
-                this.multiply = 0;
-            }
+        }
+       else if (frameCount % 40 >= 10 && frameCount % 40 <= 20) {
+            if (cord) {
+                this.multiply++;
 
-        } else {
+                var x = cord[0];
+                var y = cord[1];
+
+                matrix[y][x] = 2;
+                matrix[this.y][this.x] = 0;
+
+                this.x = x;
+                this.y = y;
+
+
+                for (var i in xotArr) {
+                    if (x == xotArr[i].x && y == xotArr[i].y) {
+                        xotArr.splice(i, 1);
+                    }
+                    break;
+                }
+                if (this.multiply == 2) {
+                    this.mul()
+                    this.multiply = 0;
+                }
+            }
+        }
+        else if (frameCount % 40 >= 20 && frameCount % 40 <= 30) {
+            if (cord) {
+                this.multiply++;
+
+                var x = cord[0];
+                var y = cord[1];
+
+                matrix[y][x] = 2;
+                matrix[this.y][this.x] = 0;
+
+                this.x = x;
+                this.y = y;
+
+
+                for (var i in xotArr) {
+                    if (x == xotArr[i].x && y == xotArr[i].y) {
+                        xotArr.splice(i, 1);
+                    }
+                    break;
+                }
+                if (this.multiply == 2) {
+                    this.mul()
+                    this.multiply = 0;
+                }
+            }
+        }
+        else if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
+            if (cord) {
+                this.multiply++;
+
+                var x = cord[0];
+                var y = cord[1];
+
+                matrix[y][x] = 2;
+                matrix[this.y][this.x] = 0;
+
+                this.x = x;
+                this.y = y;
+
+
+                for (var i in xotArr) {
+                    if (x == xotArr[i].x && y == xotArr[i].y) {
+                        xotArr.splice(i, 1);
+                    }
+                    break;
+                }
+                if (this.multiply == 10) {
+                    this.mul()
+                    this.multiply = 0;
+                }
+            }
+        }
+        else {
             this.move();
             this.energy--;
             if (this.energy < 5) {
