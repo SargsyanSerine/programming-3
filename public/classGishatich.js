@@ -30,7 +30,34 @@ class Gishatich extends Mariakan{
         var emptyCord = this.getDirections(2);
 
         var cord = random(emptyCord);
+if (frameCount % 40 >= 0 && frameCount % 40 <= 10) {
+        if (cord) {
+            this.multiply++;
 
+            var x = cord[0];
+            var y = cord[1];
+
+            matrix[y][x] = 3;
+            matrix[this.y][this.x] = 0;
+
+            this.x = x;
+            this.y = y;
+
+
+            for (var i in eatArr) {
+                if (x == eatArr[i].x && y == eatArr[i].y) {
+                    eatArr.splice(i, 1);
+                }
+                break;
+            }
+            if (this.multiply == 1) {
+                this.mul()
+                this.multiply = 0;
+            }
+
+        }
+    }
+    if (frameCount % 40 >= 10 && frameCount % 40 <= 20) {
         if (cord) {
             this.multiply++;
 
@@ -55,7 +82,63 @@ class Gishatich extends Mariakan{
                 this.multiply = 0;
             }
 
-        } else {
+        }
+    }
+    if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
+        if (cord) {
+            this.multiply++;
+
+            var x = cord[0];
+            var y = cord[1];
+
+            matrix[y][x] = 3;
+            matrix[this.y][this.x] = 0;
+
+            this.x = x;
+            this.y = y;
+
+
+            for (var i in eatArr) {
+                if (x == eatArr[i].x && y == eatArr[i].y) {
+                    eatArr.splice(i, 1);
+                }
+                break;
+            }
+            if (this.multiply == 0) {
+                this.mul()
+                this.multiply = 0;
+            }
+
+        }
+    }
+    if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
+        if (cord) {
+            this.multiply++;
+
+            var x = cord[0];
+            var y = cord[1];
+
+            matrix[y][x] = 3;
+            matrix[this.y][this.x] = 0;
+
+            this.x = x;
+            this.y = y;
+
+
+            for (var i in eatArr) {
+                if (x == eatArr[i].x && y == eatArr[i].y) {
+                    eatArr.splice(i, 1);
+                }
+                break;
+            }
+            if (this.multiply == 3) {
+                this.mul()
+                this.multiply = 0;
+            }
+
+        }
+    }
+     else {
             this.move();
             this.energy--;
             if (this.energy < 10) {

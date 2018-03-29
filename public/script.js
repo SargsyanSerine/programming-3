@@ -27,7 +27,7 @@ var matrix = [
 
 var bardz = 50;
 var layn = 50;
-var GrassCount = 10;
+var GrassCount = 50;
 var EatgrassCount = 10;
 var GishatichCount = 10;
 var TakardCount = 0;
@@ -141,7 +141,7 @@ function draw() {
 
   console.log(frameCount);
 
-  if (frameCount %40>=0 && frameCount  %40<=10)
+  if (frameCount %40>=0 && frameCount  %40<=10)/*Amar */
   {
         for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {
@@ -170,7 +170,7 @@ function draw() {
     
  }
 
-  else if (frameCount %40>=10 && frameCount %40<=20)
+  else if (frameCount %40>=10 && frameCount %40<=20)/*Ashun */
   {
         for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {
@@ -199,7 +199,7 @@ function draw() {
     
  }
 
- else if (frameCount %40>=20 && frameCount %40<=30)
+ else if (frameCount %40>=20 && frameCount %40<=30)/*Dzmer */
   {
         for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {
@@ -228,7 +228,7 @@ function draw() {
     
  }
 
- else if (frameCount %40>=30 && frameCount %40<=39)
+ else if (frameCount %40>=30 && frameCount %40<=39)/*Garun */
   {
         for (var i = 0; i < matrix.length; i++) {
         for (var j = 0; j < matrix[i].length; j++) {

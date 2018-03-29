@@ -34,7 +34,7 @@ class Eatgrass extends Mariakan {
         var emptyCord = this.getDirections(1);
 
         var cord = random(emptyCord);
-        if (frameCount % 40 >= 0 && frameCount % 40 <= 10) {
+        if (frameCount % 40 >= 0 && frameCount % 40 <= 10)/*Amar */ {
             if (cord) {
                 this.multiply++;
 
@@ -60,7 +60,7 @@ class Eatgrass extends Mariakan {
                 }
             }
         }
-       else if (frameCount % 40 >= 10 && frameCount % 40 <= 20) {
+       else if (frameCount % 40 >= 10 && frameCount % 40 <= 20)/*Ashun */ {
             if (cord) {
                 this.multiply++;
 
@@ -86,7 +86,7 @@ class Eatgrass extends Mariakan {
                 }
             }
         }
-        else if (frameCount % 40 >= 20 && frameCount % 40 <= 30) {
+        else if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
             if (cord) {
                 this.multiply++;
 
@@ -106,13 +106,13 @@ class Eatgrass extends Mariakan {
                     }
                     break;
                 }
-                if (this.multiply == 2) {
+                if (this.multiply == 0) {
                     this.mul()
                     this.multiply = 0;
                 }
             }
         }
-        else if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
+         else if (frameCount %40>=30 && frameCount %40<=39)/*Garun */ {
             if (cord) {
                 this.multiply++;
 
