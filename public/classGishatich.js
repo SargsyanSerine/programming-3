@@ -1,7 +1,7 @@
 class Gishatich extends Mariakan {
     constructor(x, y, ind) {
         super(x, y, ind);
-        this.energy = 20;
+        this.energy = 30;
 
     }
 
@@ -30,19 +30,19 @@ class Gishatich extends Mariakan {
         var emptyCord = this.getDirections(2);
 
         var cord = random(emptyCord);
-        var mult = 2;
+        var mult = 1;
         if (frameCount % 40 >= 0 && frameCount % 40 <= 10)/*Amar */ {
 
-            mult = 2;
+            mult = 1;
         }
         else if (frameCount % 40 >= 10 && frameCount % 40 <= 20)/*Ashun */ {
-            mult = 3;
+            mult = 2;
         }
         else if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
-            mult = 0;
+            mult = 3;
         }
         else if (frameCount % 40 >= 30 && frameCount % 40 <= 39)/*Garun */ {
-            mult = 3;
+            mult = 2;
         }
 
         if (cord) {
@@ -72,7 +72,7 @@ class Gishatich extends Mariakan {
         else {
             this.move();
             this.energy--;
-            if (this.energy < 10) {
+            if (this.energy < 5) {
                 this.die();
                 //this.energy = 20;
             }

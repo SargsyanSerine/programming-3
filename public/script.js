@@ -5,6 +5,7 @@ var eatArr = [];
 var gishatichArr = [];
 var takardArr = [];
 var qarArr = [];
+var mardArr = [];
 
 /*
 var matrix = [
@@ -19,7 +20,7 @@ var matrix = [
     [0, 2, 0, 0, 2, 1, 0, 2, 1, 2, 0, 1, 1, 1, 1, 0, 1],
     [0, 0, 0, 3, 1, 1, 0, 0, 1, 0, 0, 2, 5, 4, 0, 1, 1],
     [2, 0, 5, 0, 4, 1, 0, 0, 1, 1, 1, 1, 1, 2, 0, 2, 1],
-    [2, 0, 0, 0, 0, 1, 0, 2, 1, 2, 2, 1, 2, 1, 1, 1, 1],
+    [2, 0, 0, 0, 0, 1, 5, 2, 1, 2, 2, 1, 2, 1, 1, 1, 1],
     [2, 1, 1, 1, 0, 1, 0, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2],
 ]
 */
@@ -31,6 +32,7 @@ var GrassCount = 50;
 var EatgrassCount = 5;
 var GishatichCount = 10;
 var TakardCount = 10;
+var MardCount = 10;
 
 
 
@@ -85,10 +87,19 @@ function setup() {
             c++;
         }
     }
+    var c = 0;
+    while (c < MardCount) {
+        var x = Math.floor(random(0, layn));
+        var y = Math.floor(random(0, bardz));
+        if (matrix[x][y] == 0) {
+            matrix[x][y] = 5;
+            c++;
+        }
+    }
 
 
     noStroke()
-    frameRate(80);
+    frameRate(100);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
 
@@ -114,6 +125,11 @@ function setup() {
             else if (matrix[i][j] == 4) {
                 var takard = new Takard(j, i, 4);
                 takardArr.push(takard);
+
+            }
+            else if (matrix[i][j] == 5) {
+                var mard = new Mard(j, i, 5);
+                mardArr.push(mard);
 
             }
 
@@ -165,7 +181,7 @@ var grassColor = "green";
     else if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
 
         wheaterContainer.innerHTML = "Dzmer";
-        wheaterContainer.style.color = "#d9d9d9";
+        wheaterContainer.style.color = "#bfbfbf";
         grassColor = "#f2f2f2";
 
     }
@@ -200,6 +216,10 @@ for (var i = 0; i < matrix.length; i++) {
                     fill('black');
                     rect(j * side, i * side, side, side);
                 }
+                else if (matrix[i][j] == 5) {
+                    fill('red');
+                    rect(j * side, i * side, side, side);
+                }
 
 
             }
@@ -217,6 +237,9 @@ for (var i = 0; i < matrix.length; i++) {
         }
         for (var i in takardArr) {
             takardArr[i].eat();
+        }
+        for (var i in mardArr) {
+            mardArr[i].eat();
         }
 
 
