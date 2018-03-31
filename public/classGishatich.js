@@ -1,4 +1,4 @@
-class Gishatich extends Mariakan{
+class Gishatich extends Mariakan {
     constructor(x, y, ind) {
         super(x, y, ind);
         this.energy = 20;
@@ -7,7 +7,7 @@ class Gishatich extends Mariakan{
 
 
 
-     move() {
+    move() {
         var emptyCord = this.getDirections(0);
         var cord = random(emptyCord);
 
@@ -30,115 +30,46 @@ class Gishatich extends Mariakan{
         var emptyCord = this.getDirections(2);
 
         var cord = random(emptyCord);
-if (frameCount % 40 >= 0 && frameCount % 40 <= 10) {
+        var mult = 2;
+        if (frameCount % 40 >= 0 && frameCount % 40 <= 10)/*Amar */ {
+
+            mult = 2;
+        }
+        else if (frameCount % 40 >= 10 && frameCount % 40 <= 20)/*Ashun */ {
+            mult = 3;
+        }
+        else if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
+            mult = 0;
+        }
+        else if (frameCount % 40 >= 30 && frameCount % 40 <= 39)/*Garun */ {
+            mult = 3;
+        }
+
         if (cord) {
             this.multiply++;
 
             var x = cord[0];
             var y = cord[1];
 
-            matrix[y][x] = 3;
+            matrix[y][x] = 2;
             matrix[this.y][this.x] = 0;
 
             this.x = x;
             this.y = y;
 
 
-            for (var i in eatArr) {
-                if (x == eatArr[i].x && y == eatArr[i].y) {
-                    eatArr.splice(i, 1);
+            for (var i in xotArr) {
+                if (x == xotArr[i].x && y == xotArr[i].y) {
+                    xotArr.splice(i, 1);
                 }
                 break;
             }
-            if (this.multiply == 1) {
+            if (this.multiply == mult) {
                 this.mul()
                 this.multiply = 0;
             }
-
         }
-    }
-    if (frameCount % 40 >= 10 && frameCount % 40 <= 20) {
-        if (cord) {
-            this.multiply++;
-
-            var x = cord[0];
-            var y = cord[1];
-
-            matrix[y][x] = 3;
-            matrix[this.y][this.x] = 0;
-
-            this.x = x;
-            this.y = y;
-
-
-            for (var i in eatArr) {
-                if (x == eatArr[i].x && y == eatArr[i].y) {
-                    eatArr.splice(i, 1);
-                }
-                break;
-            }
-            if (this.multiply == 2) {
-                this.mul()
-                this.multiply = 0;
-            }
-
-        }
-    }
-    if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
-        if (cord) {
-            this.multiply++;
-
-            var x = cord[0];
-            var y = cord[1];
-
-            matrix[y][x] = 3;
-            matrix[this.y][this.x] = 0;
-
-            this.x = x;
-            this.y = y;
-
-
-            for (var i in eatArr) {
-                if (x == eatArr[i].x && y == eatArr[i].y) {
-                    eatArr.splice(i, 1);
-                }
-                break;
-            }
-            if (this.multiply == 0) {
-                this.mul()
-                this.multiply = 0;
-            }
-
-        }
-    }
-    if (frameCount % 40 >= 30 && frameCount % 40 <= 39) {
-        if (cord) {
-            this.multiply++;
-
-            var x = cord[0];
-            var y = cord[1];
-
-            matrix[y][x] = 3;
-            matrix[this.y][this.x] = 0;
-
-            this.x = x;
-            this.y = y;
-
-
-            for (var i in eatArr) {
-                if (x == eatArr[i].x && y == eatArr[i].y) {
-                    eatArr.splice(i, 1);
-                }
-                break;
-            }
-            if (this.multiply == 3) {
-                this.mul()
-                this.multiply = 0;
-            }
-
-        }
-    }
-     else {
+        else {
             this.move();
             this.energy--;
             if (this.energy < 10) {
@@ -149,16 +80,16 @@ if (frameCount % 40 >= 0 && frameCount % 40 <= 10) {
     }
 
     mul() {
-        
-    
-            var emptyCord = this.getDirections(0);
-       
+
+
+        var emptyCord = this.getDirections(0);
+
 
         var cord = random(emptyCord);
         if (cord) {
             var x = cord[0];
             var y = cord[1];
-            
+
             this.multiply++;
 
             var norGishatich = new Gishatich(x, y, this.index);
@@ -168,15 +99,15 @@ if (frameCount % 40 >= 0 && frameCount % 40 <= 10) {
             this.multiply = 0;
         }
     }
-    
+
     die() {
         matrix[this.y][this.x] = 0;
-        for (var i in  gishatichArr) {
+        for (var i in gishatichArr) {
             if (this.x == gishatichArr[i].x && this.y == gishatichArr[i].y) {
                 gishatichArr.splice(i, 1);
             }
         }
-       
+
     }
 
 }

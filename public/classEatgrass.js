@@ -34,86 +34,22 @@ class Eatgrass extends Mariakan {
         var emptyCord = this.getDirections(1);
 
         var cord = random(emptyCord);
+        var mult = 2;
         if (frameCount % 40 >= 0 && frameCount % 40 <= 10)/*Amar */ {
-            if (cord) {
-                this.multiply++;
 
-                var x = cord[0];
-                var y = cord[1];
-
-                matrix[y][x] = 2;
-                matrix[this.y][this.x] = 0;
-
-                this.x = x;
-                this.y = y;
-
-
-                for (var i in xotArr) {
-                    if (x == xotArr[i].x && y == xotArr[i].y) {
-                        xotArr.splice(i, 1);
-                    }
-                    break;
-                }
-                if (this.multiply == 1) {
-                    this.mul()
-                    this.multiply = 0;
-                }
-            }
+            mult = 2;
         }
        else if (frameCount % 40 >= 10 && frameCount % 40 <= 20)/*Ashun */ {
-            if (cord) {
-                this.multiply++;
-
-                var x = cord[0];
-                var y = cord[1];
-
-                matrix[y][x] = 2;
-                matrix[this.y][this.x] = 0;
-
-                this.x = x;
-                this.y = y;
-
-
-                for (var i in xotArr) {
-                    if (x == xotArr[i].x && y == xotArr[i].y) {
-                        xotArr.splice(i, 1);
-                    }
-                    break;
-                }
-                if (this.multiply == 2) {
-                    this.mul()
-                    this.multiply = 0;
-                }
-            }
+            mult = 3;
         }
         else if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
-            if (cord) {
-                this.multiply++;
-
-                var x = cord[0];
-                var y = cord[1];
-
-                matrix[y][x] = 2;
-                matrix[this.y][this.x] = 0;
-
-                this.x = x;
-                this.y = y;
-
-
-                for (var i in xotArr) {
-                    if (x == xotArr[i].x && y == xotArr[i].y) {
-                        xotArr.splice(i, 1);
-                    }
-                    break;
-                }
-                if (this.multiply == 0) {
-                    this.mul()
-                    this.multiply = 0;
-                }
-            }
+            mult = 0;
         }
          else if (frameCount %40>=30 && frameCount %40<=39)/*Garun */ {
-            if (cord) {
+            mult = 3;
+        }
+        
+        if (cord) {
                 this.multiply++;
 
                 var x = cord[0];
@@ -132,12 +68,11 @@ class Eatgrass extends Mariakan {
                     }
                     break;
                 }
-                if (this.multiply == 10) {
+                if (this.multiply == mult) {
                     this.mul()
                     this.multiply = 0;
                 }
             }
-        }
         else {
             this.move();
             this.energy--;
