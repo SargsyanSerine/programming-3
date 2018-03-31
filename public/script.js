@@ -1,3 +1,4 @@
+
 var matrix = []
 var side = 10;
 var xotArr = [];
@@ -33,6 +34,12 @@ var EatgrassCount = 5;
 var GishatichCount = 10;
 var TakardCount = 10;
 var MardCount = 10;
+
+var statistics = {
+    "GrassCount": 0,
+    "EatgrassCount": 0,
+    "GishatichCount": 0,
+}
 
 
 
