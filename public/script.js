@@ -34,11 +34,14 @@ var EatgrassCount = 5;
 var GishatichCount = 10;
 var TakardCount = 10;
 var MardCount = 10;
-
+var socket = io.connect('http://localhost:3000');
 var statistics = {
+    "timestamp": "",
     "GrassCount": 0,
     "EatgrassCount": 0,
     "GishatichCount": 0,
+    "TakardCount": 0,
+    "MardCount": 0,
 }
 
 
@@ -151,6 +154,11 @@ function setup() {
 
 
 function draw() {
+    if (frameCount % 500 === 0) {
+        statistics.timestamp = (new Date()).toString();
+        statistics.framecount = frameCount;
+        socket.emit("send data", statistics);
+    }
 
 
 
