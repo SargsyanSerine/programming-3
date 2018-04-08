@@ -34,14 +34,15 @@ var EatgrassCount = 5;
 var GishatichCount = 10;
 var TakardCount = 10;
 var MardCount = 10;
-var socket = io.connect('http://localhost:3000');
+
+
 var statistics = {
     "timestamp": "",
-    "GrassCount": 0,
-    "EatgrassCount": 0,
-    "GishatichCount": 0,
-    "TakardCount": 0,
-    "MardCount": 0,
+    "grassCount": 0,
+    "eatgrassCount": 0,
+    "gishatichCount": 0,
+    "takardCount": 0,
+    "mardCount": 0,
 }
 
 
@@ -166,11 +167,12 @@ function draw() {
 
 
 
-var grassColor = "green";
+    var grassColor = "green";
 
 
 
     text(frameCount, width / 2, height / 2);
+    
 
     console.log(frameCount);
 
@@ -190,7 +192,7 @@ var grassColor = "green";
     else if (frameCount % 40 >= 10 && frameCount % 40 <= 20)/*Ashun */ {
         wheaterContainer.innerHTML = "Ashun";
         wheaterContainer.style.color = "#b98046";
-       grassColor = "#b98046";
+        grassColor = "#b98046";
     }
 
     else if (frameCount % 40 >= 20 && frameCount % 40 <= 30)/*Dzmer */ {
@@ -202,62 +204,65 @@ var grassColor = "green";
     }
 
     else if (frameCount % 40 >= 30 && frameCount % 40 <= 39)/*Garun */ {
-   
-            wheaterContainer.innerHTML = "Garun";
-            wheaterContainer.style.color = "#00ff00";
-            grassColor = "#00ff00";
 
-        }
-
-        
-
-for (var i = 0; i < matrix.length; i++) {
-            for (var j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] == 1) {
-                    fill(grassColor);
-                    rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 2) {
-                    fill("orange");
-                    rect(j * side, i * side, side, side);
-                } else if (matrix[i][j] == 0) {
-                    fill('#acacac');
-                    rect(j * side, i * side, side, side);
-                }
-                else if (matrix[i][j] == 3) {
-                    fill('blue');
-                    rect(j * side, i * side, side, side);
-                }
-                else if (matrix[i][j] == 4) {
-                    fill('black');
-                    rect(j * side, i * side, side, side);
-                }
-                else if (matrix[i][j] == 5) {
-                    fill('red');
-                    rect(j * side, i * side, side, side);
-                }
-
-
-            }
-        }
-
-        for (var i in xotArr) {
-            xotArr[i].mul();
-        }
-
-        for (var i in eatArr) {
-            eatArr[i].eat();
-        }
-        for (var i in gishatichArr) {
-            gishatichArr[i].eat();
-        }
-        for (var i in takardArr) {
-            takardArr[i].eat();
-        }
-        for (var i in mardArr) {
-            mardArr[i].eat();
-        }
-
-
-
+        wheaterContainer.innerHTML = "Garun";
+        wheaterContainer.style.color = "#00ff00";
+        grassColor = "#00ff00";
 
     }
+
+
+
+    for (var i = 0; i < matrix.length; i++) {
+        for (var j = 0; j < matrix[i].length; j++) {
+            if (matrix[i][j] == 1) {
+                fill(grassColor);
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 2) {
+                fill("orange");
+                rect(j * side, i * side, side, side);
+            } else if (matrix[i][j] == 0) {
+                fill('#acacac');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 3) {
+                fill('blue');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 4) {
+                fill('black');
+                rect(j * side, i * side, side, side);
+            }
+            else if (matrix[i][j] == 5) {
+                fill('red');
+                rect(j * side, i * side, side, side);
+            }
+
+
+        }
+    }
+
+    for (var i in xotArr) {
+        xotArr[i].mul();
+    }
+
+    for (var i in eatArr) {
+        eatArr[i].eat();
+    }
+    for (var i in gishatichArr) {
+        gishatichArr[i].eat();
+    }
+    for (var i in takardArr) {
+        takardArr[i].eat();
+    }
+    for (var i in mardArr) {
+        mardArr[i].eat();
+    }
+}
+   
+
+    
+
+
+    
+

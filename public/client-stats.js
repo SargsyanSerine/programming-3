@@ -13,19 +13,20 @@ socket.on("send stats",function(statistics){
     //Պատրսատում ենք աղյուսակը
     statistics = JSON.parse(statistics);
     table.innerHTML = "";
-    tableHTML = "<tr><td>timestamp</td><td>GrassCount</td><td>EatgrassCount</td><td>EatgrassCount</td><td>GishatichCount</td><td>TakardCount</td><td>TakardCount</td></tr>";
+    tableHTML = "<tr><td>Ժամանակ</td><td>Խոտ</td><td>Խոտակեր</td><td>Գիշատիչ</td><td>Թակարդ</td><td>Մարդ</td></tr>";
     for(var st of statistics){
         tableHTML+="<tr>";
         tableHTML+="<td>"+st.timestamp+"</td>";
-        tableHTML+="<td>"+st.GrassCount+"</td>";
-        tableHTML+="<td>"+st.EatgrassCount+"</td>";
-        tableHTML+="<td>"+st.GishatichCount+"</td>";
-        tableHTML+="<td>"+st.TakardCount+"</td>";
-        tableHTML+="<td>"+st.MardCount+"</td>";
+        tableHTML+="<td>"+st.grasscount+"</td>";
+        tableHTML+="<td>"+st.eatgrasscount+"</td>";
+        tableHTML+="<td>"+st.gishatichcount+"</td>";
+        tableHTML+="<td>"+st.takardcount+"</td>";
+        tableHTML+="<td>"+st.mardcount+"</td>";
         tableHTML+="</tr>";
     }
 
     table.innerHTML = tableHTML;
-   console.log(statistics);
+    //console.log(statistics);
 })
+
 
