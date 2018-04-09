@@ -38,11 +38,11 @@ var MardCount = 10;
 
 var statistics = {
     "timestamp": "",
-    "grassCount": 0,
-    "eatgrassCount": 0,
-    "gishatichCount": 0,
-    "takardCount": 0,
-    "mardCount": 0,
+    "grasscount": 0,
+    "eatgrasscount": 0,
+    "gishatichcount": 0,
+    "takardcount": 0,
+    "mardcount": 0,
 }
 
 
@@ -156,8 +156,8 @@ function setup() {
 
 function draw() {
     if (frameCount % 500 === 0) {
-        statistics.timestamp = (new Date()).toString();
-        statistics.framecount = frameCount;
+        statistics.frameCount = (new Date()).toString();
+        statistics.timestamp = frameCount;
         socket.emit("send data", statistics);
     }
 
